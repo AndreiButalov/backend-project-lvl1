@@ -21,8 +21,11 @@ const startEven = () => {
 			console.log('Correct!');
 		}else if (answer.includes('no') === true && ranNum % 2 !== 0) {
 			console.log('Correct!');
-		}else{
-			console.log(`${answer} is wrong answer ;(. Correct answer was ${answer}.\nLet's try again, ${name}!`);
+		}else if (answer.includes('yes') === false && ranNum % 2 === 0){
+			console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
+			return;
+		}else {
+			console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}`);
 			return;
 		}
 		
