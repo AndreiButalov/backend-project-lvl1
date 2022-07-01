@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import randomNumber from '../Tools/NumRandom.js';
 
-//export default ranNum = randomNumber;
 const startEven = () => {
 
 
@@ -11,22 +10,19 @@ const startEven = () => {
 	
 	console.log("Answer 'yes' if the number is even, otherwise 'no'.");
 
-	//const ranNum = randomNumber;
-
 	for (let i = 0; i < 3; i++) {
-
-		//const ranNum = randomNumber;
+		const ranNum = randomNumber(1, 100);		
 		
-		console.log(`Question: ${randomNumber}`);
+		console.log(`Question: ${ranNum}`);
 
 		const answer = readlineSync.question("Your answer:");
 
-		if (answer.includes('yes') === true && randomNumber % 2 === 0) {
+		if (answer.includes('yes') === true && ranNum % 2 === 0) {
 			console.log('Correct!');
-		}else if (answer.includes('no') === true && randomNumber % 2 !== 0) {
+		}else if (answer.includes('no') === true && ranNum % 2 !== 0) {
 			console.log('Correct!');
 		}else{
-			console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+			console.log(`${answer} is wrong answer ;(. Correct answer was ${answer}.\nLet's try again, ${name}!`);
 			return;
 		}
 		
