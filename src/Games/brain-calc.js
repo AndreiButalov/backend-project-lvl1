@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import randomNumber from '..Tools/NumRandom.js';
+import randomNumber from '../Tools/NumRandom.js';
 
 const startCalc = () => {
 	console.log("Welcome to the brain Games!");
@@ -20,21 +20,24 @@ const startCalc = () => {
 
         	if (ranOperator === '+') {
                 	correctAnswer = ranNum1 + ranNum2;
+			console.log(correctAnswer);
         	}else if (ranOperator === '-') {
-                	correctAnswer = ranNum1 - ranNum2
+                	correctAnswer = ranNum1 - ranNum2;
+			console.log(correctAnswer);
         	}else {
                 	correctAnswer = ranNum1 * ranNum2;
+			console.log(correctAnswer);
         	}
 
         	const userAnswer = readlineSync.question("Your answer: ");
+		console.log(userAnswer);
 
-        	if (userAnswer === correctAnswer) {
-                	console.log('Correct!');
-        	}else {
-                	console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try agin, ${name}!`);
-		}
-		console.log(`Congratulation ${name}`);
+		if (userAnswer === correctAnswer) {
+			console.log('yes');
+		}else console.log('no');
+
 	}
+	console.log(`Congratulation ${name}`);
 
 };
 
