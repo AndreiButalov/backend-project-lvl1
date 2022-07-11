@@ -11,25 +11,19 @@ const startEven = () => {
 	
 	for (let i = 0; i < 3; i++) {
         const ranNum = randomNumber(1, 100);		
-		console.log(`Question: ${ranNum}`);
+		console.log(`Question: ${ranNum}`);		
+
+		const correctAnswer = ranNum % 2 === 0 ? 'yes' : 'no';
 		const userAnswer = readlineSync.question("Your answer:");
 
-		if (userAnswer === 'yes' && ranNum % 2 === 0) {
-                console.log('Correct!');
-		}else if (userAnswer === 'no' && ranNum % 2 !== 0) {
-			console.log('Correct!');
-		}else if (userAnswer !== 'yes' && ranNum % 2 === 0){
-			console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
-			return;
-		}else {
-			console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}`);
+		if (userAnswer === correctAnswer) {
+			console.log('Correct!')
+		}else { console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}`);
 			return;
 		}
 		
 	}
-
 	console.log(`Congratulation ${name}!`);
-
 };
 
 export default startEven;
