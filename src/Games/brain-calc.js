@@ -2,31 +2,40 @@ import readlineSync from 'readline-sync';
 import randomNumber from '..Tools/NumRandom.js';
 
 const startCalc = () => {
-    console.log("Welcome to the brain Games!");
-    const name = readlineSync.question("May I have your name? ");
-    console.log(`Hello, ${name}!`);
-    console.log("What is the result of the expression?");
-	
+	console.log("Welcome to the brain Games!");
+	const name = readlineSync.question("May I have your name? ");
+	console.log(`Hello, ${name}!`);
+	console.log("What is the result of the expression?");
 
+	for (let i = 0; i < 3; i++) { 
+		const ranNum1 = randomNumber(1, 100);
+        	const ranNum2 = randomNumber(1, 100);
+        	const operator = ['+', '-', '*'];
+        	const random = Math.floor(Math.random() * operator.length);
+        	const ranOperator = operator[random];
 
-    for(let i = 0; i < 3; i++) {
-	const operator = ['+', '-', '*'];
-	    
-        const ranNum = randomNumer(1, 100);
-	const num1 = ranNum();
-	const num2 = ranNum();
-	
-	const calculate = (num1, num2, operator) =>{
-		switch (operator) {
-		   default: return null;
-		   case ('+'): return num1 + num2;
-		   case ('-'): return num1 - num2;
-		   case ('*'): return num1 * num2;
+        	console.log(`Question: ${ranNum1} ${ranOperator} ${ranNum2}`);
+
+        	let correctAnswer = 0;
+
+        	if (ranOperator === '+') {
+                	correctAnswer = ranNum1 + ranNum2;
+        	}else if (ranOperator === '-') {
+                	correctAnswer = ranNum1 - ranNum2
+        	}else {
+                	correctAnswer = ranNum1 * ranNum2;
+        	}
+
+        	const userAnswer = readlineSync.question("Your answer: ");
+
+        	if (userAnswer === correctAnswer) {
+                	console.log('Correct!');
+        	}else {
+                	console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try agin, ${name}!`);
 		}
-	};    
-        console.log(`Question: ${num1} ${operaror} ${num2}`);
-        const userAnswer = readlineSync.question("Your answer: ");
-	const rightAnswer = calculate(num1, num2, operator);
-    }    
-    
+		console.log(`Congratulation ${name}`);
+	}
+
 };
+
+export default startCalc;

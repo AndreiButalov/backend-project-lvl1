@@ -15,7 +15,7 @@ const startEven = () => {
 		const userAnswer = readlineSync.question("Your answer:");
 
 		if (userAnswer === 'yes' && ranNum % 2 === 0) {
-            console.log('Correct!');
+                console.log('Correct!');
 		}else if (userAnswer === 'no' && ranNum % 2 !== 0) {
 			console.log('Correct!');
 		}else if (userAnswer !== 'yes' && ranNum % 2 === 0){
