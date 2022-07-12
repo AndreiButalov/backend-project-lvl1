@@ -1,4 +1,4 @@
-install: 
+install:
 	npm ci
 
 brain-games:
@@ -10,7 +10,7 @@ brain-even:
 brain-calc:
 	node bin/brain-calc.js
 
-publish: 
+publish:
 	npm publish --dry-run
 
 lint:

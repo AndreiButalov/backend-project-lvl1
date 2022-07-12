@@ -30,7 +30,7 @@ const startCalc = () => {
 
 		if (correctAnswer.toString() === userAnswer) {
 			console.log("Correct!");
-		}else {console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
+		}else {console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
 		return;
 		}
 
