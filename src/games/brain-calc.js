@@ -25,9 +25,9 @@ function gamesRound() {
     return [question, correctAnswer];
 }
 
-function startBrainCalc() {
+function startCalc() {
     startGames(bedinung, gamesRound);
 };
 
-export default startBrainCalc;
+export default startCalc;
 
