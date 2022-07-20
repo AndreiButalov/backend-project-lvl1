@@ -1,41 +1,33 @@
 import readlineSync from 'readline-sync';
 import randomNumber from '../tools/NumRandom.js';
+import startGames from '../index.js';
 
-const startCalc = () => {
-	console.log("Welcome to the brain Games!");
-	const name = readlineSync.question("May I have your name? ");
-	console.log(`Hello, ${name}!`);
-	console.log("What is the result of the expression?");
+const bedinung = ("What is the result of the expression?");
 
-	for (let i = 0; i < 3; i++) {
-		const ranNum1 = randomNumber(1, 100);
-		const ranNum2 = randomNumber(1, 100);
-		const operator = ['+', '-', '*'];
-		const random = Math.floor(Math.random() * operator.length);
-		const ranOperator = operator[random];
+function ranCalc(ranNum1, ranNum2, ranOperator) {
+    if (ranOperator === '+') {
+        return ranNum1 + ranNum2;
+    }else if (ranOperator === '-') {
+        return ranNum1 - ranNum2;
+    }else {return ranNum1 * ranNum2;
+    }
+}
 
-		console.log(`Question: ${ranNum1} ${ranOperator} ${ranNum2}`);
+function gamesRound() {
+    const operators = ['+', '*', '-'];
+    const ranNum1 = randomNumber(1, 30);
+    const ranNum2 = randomNumber(1, 30);
+    const ranOperator = operators[randomNumber(0, operators.length - 1)];
 
-		let correctAnswer = 0;
+    const correctAnswer = String(ranCalc(ranNum1, ranNum2, ranOperator));
+    const question = `${ranNum1} ${ranOperator} ${ranNum2}`;
 
-		if (ranOperator === '+') {
-			correctAnswer = ranNum1 + ranNum2;			
-		}else if (ranOperator === '-') {
-			correctAnswer = ranNum1 - ranNum2;
-		}else {
-			correctAnswer = ranNum1 * ranNum2;
-		}
-		
-		const userAnswer = readlineSync.question("Your Answer: ");
+    return [question, correctAnswer];
+}
 
-		if (correctAnswer.toString() === userAnswer) {
-			console.log("Correct!");
-		}else {console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
-		return;
-		}
-
-	}
-	console.log(`Congratulation ${name}!`);
+function startBrainCalc() {
+    startGames(bedinung, gamesRound);
 };
 
-export default startCalc;
+export default startBrainCalc;
+
