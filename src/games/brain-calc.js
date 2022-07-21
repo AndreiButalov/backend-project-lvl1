@@ -30,4 +30,3 @@ function startCalc() {
 };
 
 export default startCalc;
-
