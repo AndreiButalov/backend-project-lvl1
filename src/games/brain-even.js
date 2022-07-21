@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import randomNumber from '../tools/NumRandom.js';
 import startGames from '../index.js';
 
-const bedinung = ("Answer 'yes' if the number is even, otherwise 'no'.");
+const task = ("Answer 'yes' if the number is even, otherwise 'no'.");
 
 function gamesRound() {
     const question = randomNumber(1, 100);
@@ -11,7 +11,7 @@ function gamesRound() {
 };
 
 function startEven() {
-    startGames(bedinung, gamesRound);
+    startGames(task, gamesRound);
 };
 
 export default startEven;

@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import randomNumber from '../tools/NumRandom.js';
 import startGames from '../index.js';
 
-const bedinung = ("What is the result of the expression?");
+const task = ("What is the result of the expression?");
 
 function ranCalc(ranNum1, ranNum2, ranOperator) {
     if (ranOperator === '+') {
@@ -26,7 +26,7 @@ function gamesRound() {
 }
 
 function startCalc() {
-    startGames(bedinung, gamesRound);
+    startGames(task, gamesRound);
 };
 
 export default startCalc;
