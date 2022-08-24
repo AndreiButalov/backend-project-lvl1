@@ -4,13 +4,13 @@ import startGames from '../index.js';
 
 const task = ("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-function ranPrime(num) {
-    if (num === 1) {
+function ranPrime(ranNum) {
+    if (ranNum === 1) {
         return false;
     }
 
-    for (let i = 2; i <= num / 2; i++) {
-        if (num % i === 0) {
+    for (let i = 2; i <= ranNum / 2; i++) {
+        if (ranNum % i === 0) {
             return false;
         }
     }
@@ -18,9 +18,9 @@ function ranPrime(num) {
 };
 
 function gamesRound() {
-    const num = randomNumber(2, 100);
-    const question = num;
-    const correctAnswer = ranPrime(num) ? 'yes' : 'no';
+    const ranNum = randomNumber(2, 100);
+    const question = ranNum;
+    const correctAnswer = ranPrime(ranNum) ? 'yes' : 'no';
     return [question, correctAnswer];
 };
 
